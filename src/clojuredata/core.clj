@@ -1,6 +1,10 @@
-(ns clojuredata.core)
+(ns clojuredata.core
+  (:require [clojuredata.file :refer :all]
+            [clojuredata.protocol :refer :all]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(def storage (->FileStore "."))
+
+(defn -main
+  []
+  (println storage)
+  (store storage "key" "Molly"))
