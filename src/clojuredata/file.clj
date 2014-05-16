@@ -6,7 +6,9 @@
 (defn files-in-dir
   "Retrieve list of files in a directory"
   [dir]
-  (map #(.getName %) (filter #(not (.isDirectory %)) (.listFiles (io/file ".")))))
+  (->> (.listFiles (io/file "."))
+       (filter #(not (.isDirectory %)))
+       (map #(.getName %) )))
 
 (defn edn-files-in-dir
   [dir]
