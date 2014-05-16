@@ -12,8 +12,7 @@
     (store storage "testkey" "string")
     (store storage :testkey2 "string2")
     (is (= "string" (retrieve storage "testkey")))
-    (is (= "string2" (retrieve storage :testkey2)))
-    ))
+    (is (= "string2" (retrieve storage :testkey2)))))
 
 (deftest export-test
   (testing "Can I export the entire data set."
